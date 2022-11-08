@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_test_app/widgets/my_container.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,34 +12,55 @@ class MainPage extends StatelessWidget {
         title: Text('Мое первое приложение'),
         backgroundColor: Colors.indigo,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            width: 50,
-            height: double.infinity,
-            color: Colors.green,
+          IconButton(
+            iconSize: 90,
+            splashRadius: 50,
+            icon: Icon(
+              Icons.exit_to_app,
+              color: Colors.teal,
+            ),
+            onPressed: () {
+              // Логика обработки нажатия на кнопку
+            },
           ),
-          Container(
-            width: 50,
-            height: 50,
-            color: Colors.brown,
+          TextButton(
+            onPressed: () {
+              print('Коротки клик');
+            },
+            onLongPress: () {
+              print('Долгий клик');
+            },
+            child: Text(
+              'This is a button',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 25,
+              ),
+            ),
           ),
-          Container(
-            width: 50,
-            height: 50,
-            color: Colors.blue,
-          ),
-          Container(
-            width: 50,
-            height: 50,
-            color: Colors.red,
-          ),
-          Container(
-            width: 50,
-            height: 50,
+          MaterialButton(
+            onPressed: () {},
             color: Colors.teal,
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: Text(
+              'Моя кнопка',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+              ),
+            ),
+          ),
+          TextButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.ac_unit_outlined),
+            label: Text('Button'),
           ),
         ],
       ),
