@@ -3,26 +3,6 @@ import 'package:flutter/material.dart';
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-  final double myTextSize = 30.5;
-
-  List myList = <String>[
-    'Index 1',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-    'Index 2',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +11,20 @@ class MainPage extends StatelessWidget {
         backgroundColor: Colors.indigo,
       ),
       body: Scrollbar(
-        child: ListView.builder(
-          itemCount: myList.length,
+        child: GridView.builder(
+          scrollDirection: Axis.vertical,
+          padding: EdgeInsets.all(16),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisSpacing: 16, crossAxisSpacing: 16),
+          itemCount: 18,
           itemBuilder: (BuildContext context, int index) {
-            return Text('${myList[index]}', style: TextStyle(fontSize: 50),);
+            return Card(
+              color: Colors.primaries[index].shade500,
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            );
           },
         ),
       ),
