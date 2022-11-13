@@ -10,92 +10,99 @@ class MainPage extends StatelessWidget {
         title: Text('Мое первое приложение'),
         backgroundColor: Colors.indigo,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: TextField(
-              autocorrect: false,
-              autofocus: false,
-              obscureText: false,
-              minLines: 3,
-              maxLines: 7,
-              textInputAction: TextInputAction.next,
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(16),
-                prefix: Icon(
-                  Icons.supervised_user_circle,
-                  color: Colors.indigo,
-                  size: 20,
-                ),
-                hintText: 'Введите ваш логин',
-                hintStyle: TextStyle(fontSize: 12),
-                labelText: 'Логин',
-                labelStyle: TextStyle(color: Colors.red),
-                helperText: 'Введите зарегистрированный логин',
-                helperStyle: TextStyle(fontSize: 16),
-                suffix: Icon(
-                  Icons.clear,
-                  color: Colors.red,
-                  size: 15,
-                ),
+                hintText: 'Введите логин',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
-                  borderSide: BorderSide(
-                    color: Colors.indigo,
-                    width: 1,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25),
-                  borderSide: BorderSide(
-                    color: Colors.indigo,
-                    width: 1,
-                  ),
                 ),
               ),
-              onChanged: (String value) {
-                print('$value');
-              },
             ),
-          ),
-          Expanded(
-            flex: 10,
-            child: Container(
-              height: 50,
-              color: Colors.red,
+            SizedBox(height: 16),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Введите пароль',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 50,
-              color: Colors.green,
+            SizedBox(height: 16),
+            MaterialButton(
+              onPressed: () {},
+              color: Colors.indigo,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Text(
+                'Войти',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 50,
-              color: Colors.teal,
+            SizedBox(height: 8),
+            MaterialButton(
+              onPressed: () {},
+              color: Colors.indigo,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Text(
+                'Зарегистрироваться',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-          Divider(
-            indent: 16,
-            endIndent: 16,
-            color: Colors.red,
-          ),
-          ColoredBox(
-            color: Colors.yellow,
-            child: Text('This is a colored box'),
-          ),
-        ],
+            SizedBox(height: 16),
+            Container(
+              width: 150,
+              height: 150,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.red.shade50,
+                    Colors.red.shade300,
+                    Colors.red.shade900
+                  ],
+                ),
+              ),
+              child: Text(
+                'BOOM',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Text('Цвет круга'),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(backgroundColor: Colors.teal),
+                CircleAvatar(backgroundColor: Colors.red),
+                CircleAvatar(backgroundColor: Colors.brown),
+                CircleAvatar(backgroundColor: Colors.blue),
+                CircleAvatar(backgroundColor: Colors.orange),
+              ],
+            ),
+            Divider(),
+            SwitchListTile(
+              title: Text(
+                'Автоматический вход в приложение',
+              ),
+              value: true,
+              onChanged: (value) {},
+            ),
+            Divider(),
+          ],
+        ),
       ),
     );
   }
