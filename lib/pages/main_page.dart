@@ -14,25 +14,6 @@ class MainPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Switch(
-            value: true,
-            onChanged: (value) {
-
-            }
-          ),
-          Switch(
-              value: true,
-              onChanged: (value) {
-
-              }
-          ),
-          Switch(
-              value: true,
-              onChanged: (value) {
-
-              }
-          ),
-
           Center(
             child: ContainerForSimple(),
           ),
