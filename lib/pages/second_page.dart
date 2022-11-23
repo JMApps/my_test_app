@@ -17,13 +17,11 @@ class _SecondPageState extends State<SecondPage> {
 
   @override
   void initState() {
-    print('Виджет добавлен в древо и инициализирован');
     super.initState();
   }
 
   @override
   void dispose() {
-    print('Виджет удален из древа и уничтожен');
     super.dispose();
   }
 

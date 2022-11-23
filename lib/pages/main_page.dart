@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_test_app/pages/second_page.dart';
-
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
 
@@ -10,7 +9,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
 
-  String messageToSecondScreen = '';
+  String message = '';
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _MainPageState extends State<MainPage> {
                   context,
                   MaterialPageRoute(
                     builder: (_) => SecondPage(
-                      message: messageToSecondScreen,
+                      message: message,
                     ),
                   ),
                 );
@@ -40,10 +39,11 @@ class _MainPageState extends State<MainPage> {
             TextField(
               onChanged: (value) {
                 setState(() {
-                  messageToSecondScreen = value;
+                  message = value;
                 });
               },
             ),
+            Text(message)
           ],
         ),
       ),
