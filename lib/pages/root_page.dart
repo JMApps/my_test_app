@@ -7,9 +7,9 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Test app',
+      title: 'OOP',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.teal,
       ),
       home: MainPage(),
     );
