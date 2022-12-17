@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_test_app/oop/truck.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -8,7 +9,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  bool isChecked = false;
+
+  Truck myTruck = Truck(8);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,24 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text('OOP'),
       ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              '${myTruck.getWheelsNumber}',
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            ),
+            Text(
+              '${myTruck}',
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
