@@ -1,6 +1,7 @@
 class Car {
-
   int wheelsNumber;
+
+  int get getWheelsNumber => wheelsNumber;
 
   Car({required this.wheelsNumber});
 
@@ -12,14 +13,25 @@ class Car {
 }
 
 class Toyota extends Car {
-
   int wheelsNumber;
   double weight;
   String color;
 
-  Toyota({required this.wheelsNumber, required this.weight, required this.color}) : super.named(wheelsNumber: wheelsNumber);
+  Toyota(
+      {required this.wheelsNumber, required this.weight, required this.color})
+      : super.named(wheelsNumber: wheelsNumber);
 
-  String showCar() {
-    return '${super.showCar()} Weigth: $weight, Color: $color';
+}
+
+class Lexus extends Toyota {
+  Lexus({required super.wheelsNumber, required super.weight, required super.color});
+
+  @override
+  int get getWheelsNumber => 100;
+
+  @override
+  showCar() {
+    return 'Теперь эта функция переопределена';
   }
 }
+
